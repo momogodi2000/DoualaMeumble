@@ -1,0 +1,53 @@
+{
+  "name": "douala-luxury-stays",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Premium apartment rental platform for Douala, Cameroon",
+  "keywords": ["react", "vite", "apartments", "douala", "luxury", "pwa"],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --fix",
+    "lint:check": "eslint .",
+    "preview": "vite preview",
+    "test": "echo 'Tests will be added in Phase 2'",
+    "analyze": "vite-bundle-analyzer",
+    "typecheck": "echo 'TypeScript will be added in Phase 2'"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.2.0",
+    "framer-motion": "^12.2.1",
+    "lucide-react": "^0.539.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.8.0",
+    "react-intersection-observer": "^9.14.0",
+    "react-helmet-async": "^2.0.6"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^5.0.0",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.33.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
+    "vite": "^7.1.2",
+    "vite-plugin-pwa": "^0.21.1",
+    "workbox-window": "^7.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/icons/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>Appartements Meublés Douala - Location Haut de Gamme</title>
+    <meta name="title" content="Appartements Meublés Douala - Location Haut de Gamme">
+    <meta name="description" content="Location d'appartements meublés haut de gamme à Douala, Cameroun. Réservation simple via WhatsApp. Studios, T2, T3, T4 disponibles à Bonapriso, Bonanjo, Akwa.">
+    <meta name="keywords" content="appartement meublé Douala, location Douala, logement Douala, Bonapriso, Bonanjo, Akwa, Cameroun, WhatsApp booking">
+    <meta name="author" content="Appartements Meublés Douala">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://appartements-douala.com/">
+    <meta property="og:title" content="Appartements Meublés Douala - Location Haut de Gamme">
+    <meta property="og:description" content="Location d'appartements meublés haut de gamme à Douala, Cameroun. Réservation simple via WhatsApp.">
+    <meta property="og:image" content="/images/og-image.jpg">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Appartements Meublés Douala">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://appartements-douala.com/">
+    <meta property="twitter:title" content="Appartements Meublés Douala - Location Haut de Gamme">
+    <meta property="twitter:description" content="Location d'appartements meublés haut de gamme à Douala, Cameroun. Réservation simple via WhatsApp.">
+    <meta property="twitter:image" content="/images/twitter-image.jpg">
+
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="background-color" content="#ffffff">
+    <meta name="display" content="standalone">
+    <meta name="orientation" content="portrait">
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    
+    <!-- Apple Status Bar -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="AppartDouala">
+    
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#2563eb">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    
+    <!-- Security -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.whatsapp.com">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "Appartements Meublés Douala",
+      "description": "Location d'appartements meublés haut de gamme à Douala, Cameroun",
+      "url": "https://appartements-douala.com",
+      "logo": "/icons/icon-512x512.png",
+      "image": "/images/hero-image.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bonapriso",
+        "addressLocality": "Douala",
+        "addressCountry": "CM"
+      },
+      "telephone": "+237 6XX XXX XXX",
+      "priceRange": "$$",
+      "amenityFeature": [
+        {"@type": "LocationFeatureSpecification", "name": "WiFi gratuit"},
+        {"@type": "LocationFeatureSpecification", "name": "Climatisation"},
+        {"@type": "LocationFeatureSpecification", "name": "Sécurité 24h/7j"},
+        {"@type": "LocationFeatureSpecification", "name": "Parking gratuit"}
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
