@@ -1,15 +1,19 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, MessageCircle, Star, MapPin, Users, Bed, Maximize, CheckCircle } from 'lucide-react';
-import { apartments } from '../data/apartments';
+import { ArrowLeft, MessageCircle, Star, MapPin, Users, Bed, Maximize, CheckCircle, Play } from 'lucide-react';
+import { apartments } from '../data/apartments-enhanced';
 import { formatPrice, formatCapacity } from '../utils/formatting';
 import { generateWhatsAppURL } from '../utils/whatsapp';
 import LoadingSpinner from '../components/common/LoadingSpinner';
+import { useLanguage } from '../contexts/LanguageContext.jsx';
 
 const ApartmentDetail = () => {
   const { id } = useParams();
+  const { t } = useLanguage();
   const [apartment, setApartment] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [showVideo, setShowVideo] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -101,6 +105,58 @@ const ApartmentDetail = () => {
                 </div>
               </div>
             </div>
+
+            {/* Video Section */}
+            {apartment.videos && apartment.videos.length > 0 && (
+              <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden mb-8">
+                <div className="p-4 border-b border-gray-200">
+                  <h2 className="text-xl font-semibold text-gray-900 flex items-center">
+                    <Play className="w-5 h-5 mr-2 text-primary-500" />
+                    Présentation Vidéo
+                  </h2>
+                </div>
+                <div className="p-6">
+                  <div className="relative h-96 rounded-lg overflow-hidden bg-gray-100">
+                    <video
+                      key={apartment.videos[currentVideoIndex]?.url}
+                      controls
+                      className="w-full h-full object-cover"
+                      poster={apartment.videos[currentVideoIndex]?.thumbnail}
+                    >
+                      <source src={apartment.videos[currentVideoIndex]?.url} type="video/mp4" />
+                      Votre navigateur ne supporte pas la lecture vidéo.
+                    </video>
+                  </div>
+                  {apartment.videos.length > 1 && (
+                    <div className="mt-4 grid grid-cols-2 gap-4">
+                      {apartment.videos.map((video, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setCurrentVideoIndex(index)}
+                          className={`relative aspect-video rounded-lg overflow-hidden border-2 transition-colors ${
+                            index === currentVideoIndex ? 'border-primary-500' : 'border-gray-200'
+                          }`}
+                        >
+                          <img
+                            src={video.thumbnail}
+                            alt={video.title}
+                            className="w-full h-full object-cover"
+                          />
+                          <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                            <Play className="w-8 h-8 text-white" />
+                          </div>
+                          <div className="absolute bottom-2 left-2 right-2">
+                            <p className="text-white text-sm font-medium truncate">
+                              {video.title}
+                            </p>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
 
             {/* Apartment Info */}
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">

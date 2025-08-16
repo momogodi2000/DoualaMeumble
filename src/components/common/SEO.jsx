@@ -3,7 +3,7 @@
  * Provides comprehensive SEO optimization with structured data
  */
 
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useLanguage } from '../../contexts/LanguageContext.jsx';
 
@@ -69,7 +69,7 @@ const SEO = ({
     // Schema.org structured data
     updateStructuredData();
     
-  }, [seoTitle, seoDescription, seoKeywords, currentUrl, language, image, type, apartment]);
+  }, [seoTitle, seoDescription, seoKeywords, currentUrl, language, image, type, apartment, baseUrl, updateStructuredData]);
 
   const updateMetaTag = (name, content) => {
     let element = document.querySelector(`meta[name="${name}"]`);
