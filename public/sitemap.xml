@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://doualaluxurystays.com/</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://doualaluxurystays.com/images/hero-bonamoussadi.jpg</image:loc>
+      <image:caption>Appartements meublés premium à Bonamoussadi, Douala</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Apartments Listing -->
+  <url>
+    <loc>https://doualaluxurystays.com/appartements</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- About Page -->
+  <url>
+    <loc>https://doualaluxurystays.com/a-propos</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Contact Page -->
+  <url>
+    <loc>https://doualaluxurystays.com/contact</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Individual Apartments -->
+  <url>
+    <loc>https://doualaluxurystays.com/appartements/apt_001</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://doualaluxurystays.com/appartements/apt_002</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://doualaluxurystays.com/appartements/apt_003</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Quarter-specific pages -->
+  <url>
+    <loc>https://doualaluxurystays.com/appartements?quarter=bonapriso</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://doualaluxurystays.com/appartements?quarter=bonanjo</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://doualaluxurystays.com/appartements?quarter=akwa</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://doualaluxurystays.com/appartements?quarter=bali</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://doualaluxurystays.com/appartements?quarter=bonamoussadi</loc>
+    <lastmod>2025-08-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Bonamoussadi Premium Apartments -->
+  <url>
+    <loc>https://doualaluxurystays.com/appartements/apt_bon_001</loc>
+    <lastmod>2025-08-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://doualaluxurystays.com/images/photo-bonamousadi.jpg</image:loc>
+      <image:caption>Studio Premium Bonamoussadi - Appartement moderne et élégant</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://doualaluxurystays.com/appartements/apt_bon_002</loc>
+    <lastmod>2025-08-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://doualaluxurystays.com/images/photo-bonamousadi-2.jpg</image:loc>
+      <image:caption>Appartement T2 Bonamoussadi Luxe - Standing premium avec service concierge</image:caption>
+    </image:image>
+  </url>
+  
+</urlset>

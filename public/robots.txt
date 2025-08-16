@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://doualaluxurystays.com/sitemap.xml
+
+# Optimize crawling
+Crawl-delay: 1
+
+# Disallow admin and internal paths
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /api/
+
+# Allow important pages
+Allow: /appartements/
+Allow: /a-propos/
+Allow: /contact/
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Yandex
+User-agent: Yandex
+Allow: /

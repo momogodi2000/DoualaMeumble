@@ -4,34 +4,71 @@
 
 [build.environment]
   NODE_VERSION = "22"
+  VITE_WHATSAPP_NUMBER = "+237694123456"
+  VITE_BUSINESS_NAME = "Douala Luxury Stays"
+  VITE_CONTACT_EMAIL = "contact@doualaluxurystays.com"
 
+# Static asset caching
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/icons/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+# Service Worker
 [[redirects]]
   from = "/sw.js"
   to = "/sw.js"
   status = 200
   headers = { "Cache-Control" = "public, max-age=0, must-revalidate", "Service-Worker-Allowed" = "/" }
 
+# PWA Manifest
 [[redirects]]
   from = "/manifest.json"
   to = "/manifest.json"
   status = 200
-  headers = { "Content-Type" = "application/manifest+json" }
+  headers = { "Content-Type" = "application/manifest+json", "Cache-Control" = "public, max-age=86400" }
 
+# SEO files
+[[redirects]]
+  from = "/robots.txt"
+  to = "/robots.txt"
+  status = 200
+
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap.xml"
+  status = 200
+
+# SPA fallback
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-[[headers]]
-  for = "/static/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
+# Security Headers
 [[headers]]
   for = "/*"
   [headers.values]
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.whatsapp.com https://api.emailjs.com;"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://wa.me; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; connect-src 'self' https://api.whatsapp.com https://wa.me https://api.emailjs.com; font-src 'self' https://fonts.gstatic.com;"
+
+# Lighthouse optimizations
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Link = '</assets/main.css>; rel=preload; as=style, </assets/main.js>; rel=preload; as=script'

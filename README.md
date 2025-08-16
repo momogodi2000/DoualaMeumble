@@ -1,6 +1,11 @@
-# Appartements Meublés Douala
+# 🏠 Douala Luxury Stays - Premium Apartment Rental Platform
 
-Site web professionnel pour la location d'appartements meublés haut de gamme à Douala, Cameroun.
+> **"Votre Confort, Notre Excellence"** - The premier destination for luxury apartment rentals in Douala, Cameroon.
+
+[![Built with Vite](https://img.shields.io/badge/Built%20with-Vite-646CFF.svg)](https://vitejs.dev/)
+[![React](https://img.shields.io/badge/React-19+-61DAFB.svg)](https://reactjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4+-38B2AC.svg)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer%20Motion-Enabled-FF6B6B.svg)](https://www.framer.com/motion/)
 
 ## 🏠 Fonctionnalités
 

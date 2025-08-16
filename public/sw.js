@@ -141,13 +141,13 @@ self.addEventListener('notificationclick', (event) => {
 
   if (event.action === 'explore') {
     event.waitUntil(
-      clients.openWindow('/appartements')
+      self.clients.openWindow('/appartements')
     );
   } else if (event.action === 'close') {
     event.notification.close();
   } else {
     event.waitUntil(
-      clients.openWindow('/')
+      self.clients.openWindow('/')
     );
   }
 });

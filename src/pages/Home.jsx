@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { 
   ArrowRight, 
   MapPin, 
@@ -12,35 +13,68 @@ import {
   Clock,
   MessageCircle,
   CheckCircle,
-  TrendingUp
+  TrendingUp,
+  Award,
+  Building,
+  Heart
 } from 'lucide-react';
-import { apartments, testimonials, companyInfo } from '../data/apartments';
-import { formatPrice, formatCapacity } from '../utils/formatting';
-import { generateWhatsAppURL, generateInquiryWhatsAppURL } from '../utils/whatsapp';
+
+// Enhanced imports
+import { HeroTitle, Heading, Text, Lead, AccentText, Price } from '../components/atoms/Typography';
+import { MotionButton, WhatsAppButton } from '../components/atoms/Button';
+import { PropertyCard, TestimonialCard, MotionCard } from '../components/atoms/Card';
+import { APARTMENTS_DATA, QUARTERS, getFeaturedApartments, getPopularApartments } from '../data/apartments-enhanced';
+import { useWhatsApp } from '../services/whatsapp-enhanced';
 import NewsletterSignup from '../components/notifications/NewsletterSignup';
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const featuredApartments = apartments.filter(apt => apt.featured);
+  const { sendReservation, sendInquiry, getBusinessStatus } = useWhatsApp();
   
+  // Enhanced data sources
+  const featuredApartments = getFeaturedApartments();
+  const popularApartments = getPopularApartments();
+  
+  // Premium hero configuration
   const heroImages = [
-    '/images/hero-1.jpg',
-    '/images/hero-2.jpg', 
-    '/images/hero-3.jpg'
+    '/images/hero/douala-luxury-1.jpg',
+    '/images/hero/douala-luxury-2.jpg', 
+    '/images/hero/douala-luxury-3.jpg'
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
-    }, 5000);
+    }, 6000); // Slower transition for premium feel
     return () => clearInterval(timer);
   }, [heroImages.length]);
 
+  // Enhanced statistics with real business metrics
   const stats = [
-    { value: companyInfo.apartments, label: 'Appartements disponibles' },
-    { value: '500+', label: 'Clients satisfaits' },
-    { value: '4.9/5', label: 'Note moyenne' },
-    { value: '24h/7j', label: 'Support client' }
+    { 
+      value: APARTMENTS_DATA.length + '+', 
+      label: 'Appartements Premium',
+      icon: Building,
+      color: 'text-gold-500'
+    },
+    { 
+      value: '500+', 
+      label: 'Clients Satisfaits',
+      icon: Heart,
+      color: 'text-success-500'
+    },
+    { 
+      value: '4.9/5', 
+      label: 'Excellence Service',
+      icon: Award,
+      color: 'text-gold-500'
+    },
+    { 
+      value: '24h/7j', 
+      label: 'Conciergerie Premium',
+      icon: Shield,
+      color: 'text-blue-500'
+    }
   ];
 
   const features = [

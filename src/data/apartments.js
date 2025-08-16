@@ -227,6 +227,92 @@ export const apartments = [
     description: 'Appartement de luxe T4 avec terrasse et service de concierge. Idéal pour les séjours d\'affaires haut de gamme ou les grandes familles.'
   },
   {
+    id: 'apt_bon_001',
+    title: 'Studio Premium Bonamoussadi',
+    type: 'Studio',
+    location: {
+      quarter: 'Bonamoussadi',
+      address: 'Rue des Palmiers',
+      coordinates: [4.0889, 9.7442]
+    },
+    pricing: {
+      daily: 28000,
+      weekly: 170000,
+      monthly: 580000
+    },
+    capacity: 2,
+    rooms: 1,
+    bathrooms: 1,
+    surface: 38,
+    amenities: [
+      'WiFi gratuit haut débit',
+      'Climatisation silencieuse',
+      'Cuisine équipée moderne',
+      'TV câble/satellite',
+      'Lave-linge automatique',
+      'Réfrigérateur congélateur',
+      'Micro-ondes',
+      'Sécurité 24h/7j',
+      'Parking gratuit sécurisé',
+      'Ménage hebdomadaire',
+      'Linge fourni'
+    ],
+    images: [
+      '/images/photo-bonamousadi.jpg',
+      '/images/photo-bonamousadi-2.jpg',
+      '/images/photo-bonamousadi-3.jpg',
+      '/images/photo-bonamousadi-4.jpg',
+      '/images/photo-bonamousadi-5.jpg'
+    ],
+    featured: true,
+    available: true,
+    description: 'Studio moderne et élégant situé dans le quartier résidentiel de Bonamoussadi. Parfait pour les professionnels et voyageurs recherchant confort et tranquillité.'
+  },
+  {
+    id: 'apt_bon_002',
+    title: 'Appartement T2 Bonamoussadi Luxe',
+    type: 'T2',
+    location: {
+      quarter: 'Bonamoussadi',
+      address: 'Avenue de la Paix',
+      coordinates: [4.0895, 9.7438]
+    },
+    pricing: {
+      daily: 42000,
+      weekly: 250000,
+      monthly: 850000
+    },
+    capacity: 4,
+    rooms: 2,
+    bathrooms: 2,
+    surface: 65,
+    amenities: [
+      'WiFi gratuit haut débit',
+      'Climatisation multi-split',
+      'Cuisine équipée premium',
+      'TV câble dans chaque chambre',
+      'Lave-linge et lave-vaisselle',
+      'Grand réfrigérateur américain',
+      'Four et micro-ondes',
+      'Balcon spacieux',
+      'Sécurité 24h/7j',
+      'Parking privatif',
+      'Ménage bi-hebdomadaire',
+      'Linge et serviettes fournis',
+      'Service concierge'
+    ],
+    images: [
+      '/images/photo-bonamousadi-2.jpg',
+      '/images/photo-bonamousadi-3.jpg',
+      '/images/photo-bonamousadi-4.jpg',
+      '/images/photo-bonamousadi-5.jpg',
+      '/images/photo-bonamousadi.jpg'
+    ],
+    featured: true,
+    available: true,
+    description: 'Magnifique appartement T2 de standing dans une résidence moderne de Bonamoussadi. Idéal pour familles ou séjours d\'affaires prolongés.'
+  },
+  {
     id: 'apt_006',
     title: 'Appartement T2 Akwa Centre',
     type: 'T2',
@@ -315,11 +401,11 @@ export const companyInfo = {
   name: 'Appartements Meublés Douala',
   shortName: 'AppartDouala',
   description: 'Location d\'appartements meublés haut de gamme à Douala, Cameroun. Réservation simple via WhatsApp.',
-  phone: '+237 6XX XXX XXX',
-  whatsapp: '+237 6XX XXX XXX',
+  phone: '+237 656 46 70 51',
+  whatsapp: '+237 656 46 70 51',
   email: 'contact@appartements-douala.com',
   address: 'Bonapriso, Douala, Cameroun',
-  established: '2020',
+  established: '2025',
   apartments: apartments.length,
   features: [
     'Réservation rapide via WhatsApp',

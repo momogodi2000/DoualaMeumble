@@ -1,0 +1,63 @@
+<svg width="192" height="192" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="96" cy="96" r="96" fill="url(#gradient1)"/>
+  
+  <!-- Gradient Definitions -->
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4A574;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E3A5F;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F8F9FA;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4A574;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F59E0B;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main Building -->
+  <rect x="67" y="67" width="58" height="84" rx="3" ry="3" fill="url(#gradient2)" stroke="#D4A574" stroke-width="2"/>
+  
+  <!-- Windows -->
+  <rect x="75" y="75" width="8" height="10" rx="1" fill="#1E3A5F" opacity="0.8"/>
+  <rect x="87" y="75" width="8" height="10" rx="1" fill="#1E3A5F" opacity="0.6"/>
+  <rect x="99" y="75" width="8" height="10" rx="1" fill="#1E3A5F" opacity="0.8"/>
+  <rect x="111" y="75" width="8" height="10" rx="1" fill="#1E3A5F" opacity="0.6"/>
+  
+  <rect x="75" y="90" width="8" height="10" rx="1" fill="#1E3A5F" opacity="0.6"/>
+  <rect x="87" y="90" width="8" height="10" rx="1" fill="#1E3A5F" opacity="0.8"/>
+  <rect x="99" y="90" width="8" height="10" rx="1" fill="#1E3A5F" opacity="0.6"/>
+  <rect x="111" y="90" width="8" height="10" rx="1" fill="#1E3A5F" opacity="0.8"/>
+  
+  <rect x="75" y="105" width="8" height="10" rx="1" fill="#1E3A5F" opacity="0.8"/>
+  <rect x="87" y="105" width="8" height="10" rx="1" fill="#1E3A5F" opacity="0.6"/>
+  <rect x="99" y="105" width="8" height="10" rx="1" fill="#1E3A5F" opacity="0.8"/>
+  <rect x="111" y="105" width="8" height="10" rx="1" fill="#1E3A5F" opacity="0.6"/>
+  
+  <!-- Door -->
+  <rect x="90" y="131" width="12" height="17" rx="2" fill="url(#gradient3)"/>
+  <circle cx="99" cy="139" r="1" fill="#1E3A5F"/>
+  
+  <!-- Roof -->
+  <polygon points="63,69 96,45 129,69 125,69 96,50 67,69" fill="url(#gradient3)"/>
+  
+  <!-- Crown -->
+  <g transform="translate(96,30)">
+    <polygon points="-6,-4 0,-10 6,-4 4,-2 2,-6 0,-4 -2,-6 -4,-2" fill="#F59E0B"/>
+    <circle cx="0" cy="-7" r="1.2" fill="#D4A574"/>
+  </g>
+  
+  <!-- Stars -->
+  <g transform="translate(56,45)">
+    <polygon points="0,-3 1,-1 3,-1 1,0 2,2 0,1 -2,2 -1,0 -3,-1 -1,-1" fill="#F59E0B" opacity="0.8"/>
+  </g>
+  
+  <g transform="translate(130,52)">
+    <polygon points="0,-2 0.5,-0.5 2,-0.5 0.75,0.25 1.25,1.75 0,1 -1.25,1.75 -0.75,0.25 -2,-0.5 -0.5,-0.5" fill="#F59E0B" opacity="0.6"/>
+  </g>
+</svg>

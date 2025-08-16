@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = '+237 6XX XXX XXX';
+const WHATSAPP_NUMBER = '+237 656 46 70 51';
 
 export const generateWhatsAppURL = (apartment, customMessage = '') => {
   const baseMessage = customMessage || `Bonjour ! Je souhaite réserver l'appartement "${apartment.title}" situé à ${apartment.location.quarter}.
