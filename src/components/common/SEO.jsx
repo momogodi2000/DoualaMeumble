@@ -40,6 +40,81 @@ const SEO = ({
   const seoDescription = description || defaultDescription;
   const seoKeywords = [...defaultKeywords, ...keywords];
 
+  const updateStructuredData = useCallback(() => {
+    // Remove existing structured data
+    const existingScript = document.querySelector('script[type="application/ld+json"]');
+    if (existingScript) {
+      existingScript.remove();
+    }
+
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": `${baseUrl}/#organization`,
+          "name": "Douala Luxury Stays",
+          "url": baseUrl,
+          "logo": {
+            "@type": "ImageObject",
+            "url": `${baseUrl}/icons/app-logo.svg`
+          },
+          "sameAs": [
+            "https://wa.me/237656467051"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+237656467051",
+            "contactType": "customer service",
+            "availableLanguage": ["French", "English"],
+            "areaServed": "Douala, Cameroun"
+          }
+        },
+        {
+          "@type": type === 'apartment' ? "LodgingBusiness" : "WebSite",
+          "@id": `${currentUrl}/#webpage`,
+          "url": currentUrl,
+          "name": seoTitle,
+          "description": seoDescription,
+          "inLanguage": language === 'fr' ? 'fr-FR' : 'en-US',
+          "isPartOf": {
+            "@type": "WebSite",
+            "@id": `${baseUrl}/#website`,
+            "url": baseUrl,
+            "name": "Douala Luxury Stays"
+          }
+        }
+      ]
+    };
+
+    // Add apartment-specific structured data
+    if (type === 'apartment' && apartment) {
+      structuredData["@graph"].push({
+        "@type": "LodgingBusiness",
+        "@id": `${currentUrl}/#apartment`,
+        "name": `${apartment.title} - Douala Luxury Stays`,
+        "description": apartment.description,
+        "image": apartment.images?.map(img => `${baseUrl}${img}`) || [],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": apartment.location?.area || "Douala",
+          "addressCountry": "CM"
+        },
+        "priceRange": apartment.pricing ? `${apartment.pricing.monthly}€-${apartment.pricing.weekly}€` : "€€",
+        "amenityFeature": apartment.amenities?.map(amenity => ({
+          "@type": "LocationFeatureSpecification",
+          "name": amenity
+        })) || []
+      });
+    }
+
+    // Create and append script tag
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(structuredData);
+    document.head.appendChild(script);
+  }, [baseUrl, currentUrl, seoTitle, seoDescription, language, type, apartment]);
+
   useEffect(() => {
     // Update document title
     document.title = seoTitle;
@@ -99,123 +174,6 @@ const SEO = ({
       document.head.appendChild(element);
     }
     element.setAttribute('content', content);
-  };
-
-  const updateStructuredData = () => {
-    // Remove existing structured data
-    const existingScript = document.querySelector('script[type="application/ld+json"]');
-    if (existingScript) {
-      existingScript.remove();
-    }
-
-    const structuredData = {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "@id": `${baseUrl}/#organization`,
-          "name": "Douala Luxury Stays",
-          "url": baseUrl,
-          "logo": {
-            "@type": "ImageObject",
-            "url": `${baseUrl}/icons/app-logo.svg`
-          },
-          "sameAs": [
-            "https://wa.me/237656467051"
-          ],
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+237656467051",
-            "contactType": "customer service",
-            "availableLanguage": ["French", "English"],
-            "areaServed": "CM"
-          }
-        },
-        {
-          "@type": "WebSite",
-          "@id": `${baseUrl}/#website`,
-          "url": baseUrl,
-          "name": "Douala Luxury Stays - Bonamoussadi",
-          "description": seoDescription,
-          "publisher": {
-            "@id": `${baseUrl}/#organization`
-          },
-          "inLanguage": language === 'fr' ? 'fr-FR' : 'en-US'
-        },
-        {
-          "@type": "LocalBusiness",
-          "@id": `${baseUrl}/#localbusiness`,
-          "name": "Douala Luxury Stays",
-          "description": seoDescription,
-          "url": baseUrl,
-          "telephone": "+237656467051",
-          "priceRange": "$$$$",
-          "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "CM",
-            "addressLocality": "Douala",
-            "addressRegion": "Littoral",
-            "streetAddress": "Bonamoussadi"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "4.0891",
-            "longitude": "9.7123"
-          },
-          "openingHours": "Mo-Su 24:00",
-          "image": `${baseUrl}${image}`,
-          "serviceArea": {
-            "@type": "City",
-            "name": "Douala"
-          }
-        }
-      ]
-    };
-
-    // Add apartment-specific structured data if available
-    if (apartment) {
-      structuredData["@graph"].push({
-        "@type": "Accommodation",
-        "name": apartment.title,
-        "description": apartment.description,
-        "image": apartment.images?.map(img => `${baseUrl}${img.url}`) || [],
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "CM",
-          "addressLocality": "Douala",
-          "addressRegion": "Littoral",
-          "streetAddress": apartment.location?.address || "Bonamoussadi"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": apartment.location?.coordinates?.lat || "4.0891",
-          "longitude": apartment.location?.coordinates?.lng || "9.7123"
-        },
-        "offers": {
-          "@type": "Offer",
-          "price": apartment.pricing?.daily || "35000",
-          "priceCurrency": "XAF",
-          "availability": "InStock"
-        },
-        "amenityFeature": apartment.amenities?.map(amenity => ({
-          "@type": "LocationFeatureSpecification",
-          "name": amenity.name,
-          "value": true
-        })) || [],
-        "numberOfRooms": apartment.bedrooms || 1,
-        "floorSize": {
-          "@type": "QuantitativeValue",
-          "value": apartment.surface || 45,
-          "unitCode": "MTK"
-        }
-      });
-    }
-
-    // Create and append structured data script
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.textContent = JSON.stringify(structuredData);
-    document.head.appendChild(script);
   };
 
   return null; // This component doesn't render anything

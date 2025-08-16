@@ -51,7 +51,20 @@ const HomeEnhancedComplete = () => {
   // Enhanced data sources
   const featuredApartments = getFeaturedApartments();
   const popularApartments = getPopularApartments();
-  const businessStatus = getBusinessStatus();
+  
+  // Safe business status with error handling
+  let businessStatus;
+  try {
+    businessStatus = getBusinessStatus();
+  } catch (error) {
+    console.error('Error getting business status:', error);
+    businessStatus = {
+      status: 'unknown',
+      message: '🔄 Vérification du statut...',
+      responseTime: 'Réponse sous peu'
+    };
+  }
+  
   const themeColors = getThemeColors();
 
   // Premium hero configuration

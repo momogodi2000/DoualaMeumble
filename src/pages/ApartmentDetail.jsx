@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, MessageCircle, Star, MapPin, Users, Bed, Maximize, CheckCircle, Play } from 'lucide-react';
-import { apartments } from '../data/apartments-enhanced';
+import { APARTMENTS_DATA } from '../data/apartments-enhanced';
 import { formatPrice, formatCapacity } from '../utils/formatting';
 import { generateWhatsAppURL } from '../utils/whatsapp';
 import LoadingSpinner from '../components/common/LoadingSpinner';
@@ -16,12 +16,12 @@ const ApartmentDetail = () => {
   const [showVideo, setShowVideo] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const foundApartment = apartments.find(apt => apt.id === id);
-    setTimeout(() => {
+    useEffect(() => {
+    const foundApartment = APARTMENTS_DATA.find(apt => apt.id === id);
+    if (foundApartment) {
       setApartment(foundApartment);
-      setIsLoading(false);
-    }, 500);
+    }
+    setIsLoading(false);
   }, [id]);
 
   if (isLoading) {

@@ -230,8 +230,8 @@ export class WhatsAppService {
   
   static trackWhatsAppClick(message, phoneNumber) {
     // Google Analytics 4 tracking
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'whatsapp_click', {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'whatsapp_click', {
         event_category: 'engagement',
         event_label: 'reservation_attempt',
         value: 1,
@@ -243,9 +243,9 @@ export class WhatsAppService {
       });
     }
     
-    // Meta Pixel tracking
-    if (typeof fbq !== 'undefined') {
-      fbq('track', 'InitiateCheckout', {
+    // Facebook Pixel tracking
+    if (typeof window !== 'undefined' && window.fbq) {
+      window.fbq('track', 'InitiateCheckout', {
         content_name: 'Apartment Reservation',
         content_category: 'Real Estate',
         currency: 'XAF'
@@ -291,10 +291,11 @@ export class WhatsAppService {
   
   static isBusinessHours() {
     const now = new Date();
-    const day = now.toLocaleLowerCase().slice(0, 3); // mon, tue, etc.
+    const dayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+    const day = dayNames[now.getDay()];
     const time = now.toTimeString().slice(0, 5); // HH:MM
     
-    const businessHours = WHATSAPP_CONFIG.businessHours[day + 'day'];
+    const businessHours = WHATSAPP_CONFIG.businessHours[day];
     if (!businessHours) return false;
     
     const [open, close] = businessHours.split('-');

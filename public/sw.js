@@ -55,7 +55,8 @@ self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
   
-  if (request.method !== 'GET') {
+  // Skip chrome-extension and other non-http(s) requests
+  if (request.method !== 'GET' || url.protocol !== 'https:' && url.protocol !== 'http:') {
     return;
   }
 
@@ -79,7 +80,14 @@ self.addEventListener('fetch', (event) => {
                 CACHE_STRATEGIES.images.includes(fileExtension)) {
               caches.open(DYNAMIC_CACHE)
                 .then((cache) => {
-                  cache.put(request, responseToCache);
+                  try {
+                    cache.put(request, responseToCache);
+                  } catch (error) {
+                    console.warn('Failed to cache request:', request.url, error);
+                  }
+                })
+                .catch((error) => {
+                  console.warn('Failed to open cache:', error);
                 });
             }
 
