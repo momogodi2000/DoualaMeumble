@@ -358,7 +358,9 @@ const translations = {
       from: 'From',
       to: 'to',
       all: 'All',
-      none: 'None'
+      none: 'None',
+      install: 'Install App',
+      call: 'Call'
     },
     
     // Pricing

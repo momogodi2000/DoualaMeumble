@@ -24,6 +24,12 @@
   [headers.values]
     Cache-Control = "public, max-age=2592000"
 
+# Video caching
+[[headers]]
+  for = "/videos/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
 # Service Worker
 [[redirects]]
   from = "/sw.js"

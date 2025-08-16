@@ -29,7 +29,7 @@ import {
 } from 'lucide-react';
 
 // Enhanced imports
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from '../contexts/LanguageContext.jsx';
 import { useTheme } from '../contexts/ThemeContext';
 import Logo from '../components/atoms/Logo';
 import { APARTMENTS_DATA, QUARTERS, getFeaturedApartments, getPopularApartments } from '../data/apartments-enhanced';

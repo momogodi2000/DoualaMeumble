@@ -4,7 +4,7 @@ import { Menu, X, Phone, MessageCircle, MapPin, Home } from 'lucide-react';
 import { generateInquiryWhatsAppURL } from '../../utils/whatsapp';
 import { usePWA } from '../../hooks/usePWA';
 import LanguageThemeSwitcher from './LanguageThemeSwitcher';
-import { useLanguage } from '../../contexts/LanguageContext';
+import { useLanguage } from '../../contexts/LanguageContext.jsx';
 import { useTheme } from '../../contexts/ThemeContext';
 
 const Header = () => {

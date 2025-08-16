@@ -17,7 +17,7 @@ import {
   Car,
   Utensils
 } from 'lucide-react';
-import { useLanguage } from '../../contexts/LanguageContext';
+import { useLanguage } from '../../contexts/LanguageContext.jsx';
 import { useTheme } from '../../contexts/ThemeContext';
 import { Price } from '../atoms/Typography';
 import { MotionButton, WhatsAppButton } from '../atoms/Button';

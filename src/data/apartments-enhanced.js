@@ -420,53 +420,49 @@ export const APARTMENTS_DATA = [
     
     // Enhanced photo gallery with categories
     images: [
-      '/images/apartments/apt_004/main.jpg',
-      '/images/apartments/apt_004/living-room.jpg',
-      '/images/apartments/apt_004/master-bedroom.jpg',
-      '/images/apartments/apt_004/bedroom2.jpg',
-      '/images/apartments/apt_004/bedroom3.jpg',
-      '/images/apartments/apt_004/kitchen.jpg',
-      '/images/apartments/apt_004/bathroom1.jpg',
-      '/images/apartments/apt_004/bathroom2.jpg',
-      '/images/apartments/apt_004/balcony.jpg',
-      '/images/apartments/apt_004/exterior.jpg'
+      '/images/photo-bonamousadi.jpg',
+      '/images/photo-bonamousadi-2.jpg',
+      '/images/photo-bonamousadi-3.jpg',
+      '/images/photo-bonamousadi-4.jpg',
+      '/images/photo-bonamousadi-5.jpg',
+      '/images/photo-akwa.jpg',
+      '/images/photo-akwa-2.jpg',
+      '/images/photo-bonapriso.jpg'
     ],
-    
+
     // Photo gallery organized by categories
     photoGallery: {
       exterior: [
-        { url: '/images/apartments/apt_004/exterior.jpg', caption: 'Vue extérieure de la résidence' },
-        { url: '/images/apartments/apt_004/entrance.jpg', caption: 'Entrée principale sécurisée' },
-        { url: '/images/apartments/apt_004/parking.jpg', caption: 'Parking privé' }
+        { url: '/images/photo-bonamousadi.jpg', caption: 'Vue extérieure de la résidence' },
+        { url: '/images/photo-bonamousadi-2.jpg', caption: 'Entrée principale sécurisée' },
+        { url: '/images/photo-bonamousadi-3.jpg', caption: 'Parking privé' }
       ],
       living: [
-        { url: '/images/apartments/apt_004/living-room.jpg', caption: 'Salon spacieux avec TV 4K' },
-        { url: '/images/apartments/apt_004/dining.jpg', caption: 'Espace repas élégant' },
-        { url: '/images/apartments/apt_004/balcony.jpg', caption: 'Balcon avec vue panoramique' }
+        { url: '/images/photo-bonamousadi-4.jpg', caption: 'Salon spacieux avec TV 4K' },
+        { url: '/images/photo-bonamousadi-5.jpg', caption: 'Espace repas élégant' },
+        { url: '/images/photo-akwa.jpg', caption: 'Balcon avec vue panoramique' }
       ],
       bedrooms: [
-        { url: '/images/apartments/apt_004/master-bedroom.jpg', caption: 'Chambre principale avec dressing' },
-        { url: '/images/apartments/apt_004/bedroom2.jpg', caption: 'Chambre d\'invités' },
-        { url: '/images/apartments/apt_004/bedroom3.jpg', caption: 'Bureau/chambre flexible' }
+        { url: '/images/photo-bonamousadi.jpg', caption: 'Chambre principale avec dressing' },
+        { url: '/images/photo-bonamousadi-2.jpg', caption: 'Chambre d\'invités' },
+        { url: '/images/photo-bonamousadi-3.jpg', caption: 'Bureau/chambre flexible' }
       ],
       kitchen: [
-        { url: '/images/apartments/apt_004/kitchen.jpg', caption: 'Cuisine moderne entièrement équipée' },
-        { url: '/images/apartments/apt_004/kitchen-detail.jpg', caption: 'Électroménager haut de gamme' }
+        { url: '/images/photo-bonamousadi-4.jpg', caption: 'Cuisine moderne entièrement équipée' },
+        { url: '/images/photo-bonamousadi-5.jpg', caption: 'Électroménager haut de gamme' }
       ],
       bathrooms: [
-        { url: '/images/apartments/apt_004/bathroom1.jpg', caption: 'Salle de bain principale avec baignoire' },
-        { url: '/images/apartments/apt_004/bathroom2.jpg', caption: 'Salle d\'eau avec douche italienne' }
+        { url: '/images/photo-akwa.jpg', caption: 'Salle de bain principale avec baignoire' },
+        { url: '/images/photo-akwa-2.jpg', caption: 'Salle d\'eau avec douche italienne' }
       ]
-    },
-    
-    // Video presentations
+    },    // Video presentations
     videos: [
       {
         id: 'tour_apt_004',
         title: 'Visite Virtuelle Complète',
         description: 'Découvrez chaque recoin de cette magnifique résidence',
-        thumbnail: '/images/apartments/apt_004/video-thumb-tour.jpg',
-        url: '/videos/apartments/apt_004/virtual-tour.mp4',
+        thumbnail: '/images/photo-bonamousadi.jpg',
+        url: '/videos/Presentation studio bonamousadi.mp4',
         duration: '3:45',
         type: 'tour'
       },
@@ -474,8 +470,8 @@ export const APARTMENTS_DATA = [
         id: 'presentation_apt_004',
         title: 'Présentation de la Résidence',
         description: 'Vue d\'ensemble des équipements et services',
-        thumbnail: '/images/apartments/apt_004/video-thumb-presentation.jpg',
-        url: '/videos/apartments/apt_004/presentation.mp4',
+        thumbnail: '/images/photo-bonamousadi-2.jpg',
+        url: '/videos/presentation.mp4',
         duration: '2:30',
         type: 'presentation'
       },
@@ -483,8 +479,8 @@ export const APARTMENTS_DATA = [
         id: 'neighborhood_apt_004',
         title: 'Découverte du Quartier Bonamoussadi',
         description: 'Explorez les environs et commodités',
-        thumbnail: '/images/apartments/apt_004/video-thumb-neighborhood.jpg',
-        url: '/videos/apartments/apt_004/neighborhood.mp4',
+        thumbnail: '/images/photo-bonamousadi-3.jpg',
+        url: '/videos/Presentation studio bonamousadi.mp4',
         duration: '4:15',
         type: 'neighborhood'
       }

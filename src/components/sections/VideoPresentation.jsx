@@ -24,7 +24,7 @@ import {
   Film,
   Monitor
 } from 'lucide-react';
-import { useLanguage } from '../../contexts/LanguageContext';
+import { useLanguage } from '../../contexts/LanguageContext.jsx';
 import { useTheme } from '../../contexts/ThemeContext';
 
 const VideoPresentation = ({ 

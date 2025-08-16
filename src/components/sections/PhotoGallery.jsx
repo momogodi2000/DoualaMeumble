@@ -21,7 +21,7 @@ import {
   Eye,
   Maximize
 } from 'lucide-react';
-import { useLanguage } from '../../contexts/LanguageContext';
+import { useLanguage } from '../../contexts/LanguageContext.jsx';
 import { useTheme } from '../../contexts/ThemeContext';
 
 const PhotoGallery = ({ apartment, showVideos = true }) => {
