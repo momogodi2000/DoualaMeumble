@@ -39,28 +39,46 @@ const StudioPresentation = ({ apartment = null }) => {
   
   const videoRef = useRef(null);
 
-  // Studio Bonamoussadi data
+  // Studio Bonamoussadi data - Updated with all available media
   const studioData = apartment || {
     id: 'apt_bon_001',
     title: 'Studio Premium Bonamoussadi',
     location: 'Bonamoussadi, Douala',
-    price: 28000,
+    price: 35000,
     rating: 4.9,
     reviews: 24,
     bedrooms: 1,
     bathrooms: 1,
     surface: 38,
     images: [
-      '/images/bonamoussadi/studio-main.jpg',
-      '/images/bonamoussadi/studio-kitchen.jpg',
-      '/images/bonamoussadi/studio-bathroom.jpg',
-      '/images/bonamoussadi/studio-balcony.jpg'
+      // All available Bonamoussadi images
+      '/images/photo-bonamousadi.jpg',
+      '/images/photo-bonamousadi-2.jpg',
+      '/images/photo-bonamousadi-3.jpg',
+      '/images/photo-bonamousadi-4.jpg',
+      '/images/photo-bonamousadi-5.jpg',
+      '/images/salon bonamousadi.jpg',
+      '/images/salon vip bonamousadi.jpg',
+      '/images/salon 3 bonamousadi.jpg',
+      '/images/chambre bonamousadi.jpg',
+      '/images/cuisine bonamousadi.jpg',
+      '/images/cuisiwn 2 bonamousadi.jpg',
+      '/images/salle a marche bonamousadi.jpg'
     ],
-    video: {
-      poster: '/images/bonamoussadi/studio-video-poster.jpg',
-      src: '/videos/bonamoussadi-studio-presentation.mp4',
-      duration: '2:30'
-    },
+    videos: [
+      {
+        name: 'Présentation Studio Bonamoussadi',
+        poster: '/images/photo-bonamousadi.jpg',
+        src: '/videos/Presentation studio bonamousadi.mp4',
+        duration: '2:30'
+      },
+      {
+        name: 'Présentation Générale',
+        poster: '/images/salon bonamousadi.jpg',
+        src: '/videos/presentation.mp4',
+        duration: '1:45'
+      }
+    ],
     features: [
       { icon: Wifi, text: 'WiFi Haut Débit' },
       { icon: Shield, text: 'Sécurité 24h/7j' },
@@ -197,7 +215,7 @@ const StudioPresentation = ({ apartment = null }) => {
               <div className="relative rounded-2xl overflow-hidden shadow-luxury group cursor-pointer">
                 <div className="aspect-video relative">
                   <img
-                    src={studioData.video.poster}
+                    src={studioData.videos[0].poster}
                     alt="Aperçu Studio Bonamoussadi"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     onError={(e) => {
@@ -220,7 +238,7 @@ const StudioPresentation = ({ apartment = null }) => {
 
                   {/* Video Duration */}
                   <div className="absolute bottom-4 right-4 bg-black/70 text-white px-3 py-1 rounded-lg text-sm font-medium">
-                    {studioData.video.duration}
+                    {studioData.videos[0].duration}
                   </div>
 
                   {/* Video Quality Badge */}
@@ -236,13 +254,13 @@ const StudioPresentation = ({ apartment = null }) => {
                 <video
                   ref={videoRef}
                   className="w-full h-full aspect-video"
-                  poster={studioData.video.poster}
+                  poster={studioData.videos[0].poster}
                   onError={() => {
                     // Fallback if video doesn't exist
                     setShowVideo(false);
                   }}
                 >
-                  <source src={studioData.video.src} type="video/mp4" />
+                  <source src={studioData.videos[0].src} type="video/mp4" />
                   <track kind="captions" srcLang="fr" label="Français" default />
                   Votre navigateur ne supporte pas la lecture vidéo.
                 </video>

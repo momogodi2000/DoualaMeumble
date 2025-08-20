@@ -19,7 +19,7 @@ export const sendWelcomeEmail = async (userEmail, userName) => {
     const templateParams = {
       to_email: userEmail,
       to_name: userName,
-      from_name: 'Appartements Meublés Douala',
+      from_name: 'Fresh Residence',
       message: 'Bienvenue dans notre newsletter ! Découvrez nos dernières offres et conseils pour votre séjour à Douala.'
     };
 
@@ -68,7 +68,7 @@ export const sendAdminNotification = async (type, data) => {
       notification_type: type,
       data: JSON.stringify(data, null, 2),
       timestamp: new Date().toLocaleString('fr-FR'),
-      from_name: 'Site Web Appartements Douala'
+      from_name: 'Fresh Residence'
     };
 
     const response = await emailjs.send(

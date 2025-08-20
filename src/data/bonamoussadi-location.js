@@ -14,41 +14,41 @@ export const BONAMOUSSADI_LOCATION = {
     longitude: 9.7442
   },
   description: {
-    fr: 'Quartier résidentiel moderne et sécurisé de Douala, réputé pour ses infrastructures de qualité et sa proximité avec le centre-ville.',
+    fr: 'Quartier rï¿½sidentiel moderne et sï¿½curisï¿½ de Douala, rï¿½putï¿½ pour ses infrastructures de qualitï¿½ et sa proximitï¿½ avec le centre-ville.',
     en: 'Modern and secure residential quarter of Douala, renowned for its quality infrastructure and proximity to the city center.'
   },
   characteristics: {
-    type: 'Quartier résidentiel premium',
-    security: 'Très élevée',
+    type: 'Quartier rï¿½sidentiel premium',
+    security: 'Trï¿½s ï¿½levï¿½e',
     accessibility: 'Excellente',
     infrastructure: 'Moderne',
-    population: 'Classe moyenne et supérieure'
+    population: 'Classe moyenne et supï¿½rieure'
   },
   amenities: {
     healthcare: [
-      'Hôpital Général de Douala (10 km)',
-      'Clinique des Spécialités (5 km)',
+      'Hï¿½pital Gï¿½nï¿½ral de Douala (10 km)',
+      'Clinique des Spï¿½cialitï¿½s (5 km)',
       'Pharmacies modernes'
     ],
     education: [
-      'Écoles internationales',
-      'Lycée de Bonamoussadi',
+      'ï¿½coles internationales',
+      'Lycï¿½e de Bonamoussadi',
       'Centres de formation professionnelle'
     ],
     shopping: [
       'Mahima Shopping Center',
-      'Hypermarché Casino',
+      'Hypermarchï¿½ Casino',
       'Boutiques locales',
-      'Marché de Bonamoussadi'
+      'Marchï¿½ de Bonamoussadi'
     ],
     dining: [
       'Restaurants gastronomiques',
       'Fast-foods internationaux',
       'Cuisine locale authentique',
-      'Cafés et pâtisseries'
+      'Cafï¿½s et pï¿½tisseries'
     ],
     entertainment: [
-      'Complexes cinématographiques',
+      'Complexes cinï¿½matographiques',
       'Centres de fitness',
       'Parcs et espaces verts',
       'Centres culturels'
@@ -57,7 +57,7 @@ export const BONAMOUSSADI_LOCATION = {
       'Taxi urbains',
       'Moto-taxis',
       'Transport en commun',
-      'Location de véhicules'
+      'Location de vï¿½hicules'
     ],
     banking: [
       'Banque Atlantique',
@@ -76,13 +76,13 @@ export const BONAMOUSSADI_LOCATION = {
   },
   advantages: {
     fr: [
-      'Quartier moderne avec infrastructures de qualité',
-      'Excellente sécurité 24h/24',
-      'Proximité des centres commerciaux',
-      'Accès facile au centre-ville',
-      'Environnement calme et résidentiel',
-      'Services médicaux de proximité',
-      'Établissements scolaires réputés',
+      'Quartier moderne avec infrastructures de qualitï¿½',
+      'Excellente sï¿½curitï¿½ 24h/24',
+      'Proximitï¿½ des centres commerciaux',
+      'Accï¿½s facile au centre-ville',
+      'Environnement calme et rï¿½sidentiel',
+      'Services mï¿½dicaux de proximitï¿½',
+      'ï¿½tablissements scolaires rï¿½putï¿½s',
       'Transports facilement accessibles'
     ],
     en: [
@@ -100,12 +100,12 @@ export const BONAMOUSSADI_LOCATION = {
     companies: [
       'Bureaux d\'entreprises internationales',
       'Centres d\'affaires modernes',
-      'Sièges sociaux régionaux'
+      'Siï¿½ges sociaux rï¿½gionaux'
     ],
     coworking: [
-      'Espaces de coworking équipés',
-      'Salles de conférence',
-      'Internet haut débit'
+      'Espaces de coworking ï¿½quipï¿½s',
+      'Salles de confï¿½rence',
+      'Internet haut dï¿½bit'
     ]
   },
   realEstate: {
@@ -122,12 +122,12 @@ export const BONAMOUSSADI_LOCATION = {
       t4: { min: 700000, max: 1200000 }
     },
     amenitiesIncluded: [
-      'Sécurité 24h/24',
-      'Parking privé',
-      'WiFi haut débit',
+      'Sï¿½curitï¿½ 24h/24',
+      'Parking privï¿½',
+      'WiFi haut dï¿½bit',
       'Climatisation',
-      'Cuisine équipée',
-      'Ménage inclus'
+      'Cuisine ï¿½quipï¿½e',
+      'Mï¿½nage inclus'
     ]
   },
   weather: {
@@ -137,14 +137,14 @@ export const BONAMOUSSADI_LOCATION = {
       max: 32,
       average: 27
     },
-    rainfall: 'Modérée à élevée',
+    rainfall: 'Modï¿½rï¿½e ï¿½ ï¿½levï¿½e',
     bestVisitPeriods: [
-      'Décembre - Février (saison sèche)',
-      'Juin - Août (petite saison sèche)'
+      'Dï¿½cembre - Fï¿½vrier (saison sï¿½che)',
+      'Juin - Aoï¿½t (petite saison sï¿½che)'
     ]
   },
   culturalSites: [
-    'Centre culturel français',
+    'Centre culturel franï¿½ais',
     'Galeries d\'art contemporain',
     'Centres artisanaux locaux',
     'Lieux de culte modernes'
@@ -157,11 +157,11 @@ export const BONAMOUSSADI_LOCATION = {
     },
     taxi: {
       availability: 'Excellente',
-      apps: ['Taximan', 'Uber (limité)'],
+      apps: ['Taximan', 'Uber (limitï¿½)'],
       averageCost: '1000-3000 FCFA/course'
     },
     motorcycle: {
-      availability: 'Très bonne',
+      availability: 'Trï¿½s bonne',
       cost: '200-500 FCFA/course courte'
     }
   },
@@ -170,14 +170,14 @@ export const BONAMOUSSADI_LOCATION = {
     fire: '118',
     medical: '119',
     hospitals: [
-      'Hôpital Général de Douala: +237 233 42 34 56',
-      'Clinique des Spécialités: +237 233 43 65 78'
+      'Hï¿½pital Gï¿½nï¿½ral de Douala: +237 233 42 34 56',
+      'Clinique des Spï¿½cialitï¿½s: +237 233 43 65 78'
     ]
   },
   connectivity: {
     internet: {
       providers: ['Orange', 'MTN', 'Nexttel'],
-      speed: 'Haut débit disponible',
+      speed: 'Haut dï¿½bit disponible',
       reliability: 'Excellente'
     },
     mobile: {
@@ -206,30 +206,30 @@ export const BONAMOUSSADI_APARTMENTS = [
     bathrooms: 1,
     surface: 38,
     amenities: [
-      'WiFi gratuit haut débit',
+      'WiFi gratuit haut dï¿½bit',
       'Climatisation silencieuse',
-      'Cuisine équipée moderne',
-      'TV câble/satellite',
+      'Cuisine ï¿½quipï¿½e moderne',
+      'TV cï¿½ble/satellite',
       'Lave-linge automatique',
-      'Réfrigérateur congélateur',
+      'Rï¿½frigï¿½rateur congï¿½lateur',
       'Micro-ondes',
-      'Sécurité 24h/7j',
-      'Parking gratuit sécurisé',
-      'Ménage hebdomadaire',
+      'Sï¿½curitï¿½ 24h/7j',
+      'Parking gratuit sï¿½curisï¿½',
+      'Mï¿½nage hebdomadaire',
       'Linge fourni'
     ],
     features: [
-      'Balcon avec vue dégagée',
-      'Design moderne et épuré',
-      'Quartier résidentiel calme',
+      'Balcon avec vue dï¿½gagï¿½e',
+      'Design moderne et ï¿½purï¿½',
+      'Quartier rï¿½sidentiel calme',
       'Proche centres commerciaux',
-      'Accès rapide centre-ville'
+      'Accï¿½s rapide centre-ville'
     ],
     images: [
-      '/images/bonamoussadi/studio-001-1.jpg',
-      '/images/bonamoussadi/studio-001-2.jpg',
-      '/images/bonamoussadi/studio-001-3.jpg',
-      '/images/bonamoussadi/studio-001-4.jpg'
+      '/images/salon bonamousadi.jpg',
+      '/images/cuisine bonamousadi.jpg',
+      '/images/chambre bonamousadi.jpg',
+      '/images/salle a marche bonamousadi.jpg'
     ],
     available: true,
     featured: true,
@@ -238,7 +238,7 @@ export const BONAMOUSSADI_APARTMENTS = [
       reviews: 24
     },
     description: {
-      fr: 'Studio moderne et élégant situé dans le quartier résidentiel de Bonamoussadi. Parfait pour les professionnels et voyageurs recherchant confort et tranquillité.',
+      fr: 'Studio moderne et ï¿½lï¿½gant situï¿½ dans le quartier rï¿½sidentiel de Bonamoussadi. Parfait pour les professionnels et voyageurs recherchant confort et tranquillitï¿½.',
       en: 'Modern and elegant studio located in the residential quarter of Bonamoussadi. Perfect for professionals and travelers seeking comfort and tranquility.'
     }
   },
@@ -259,34 +259,34 @@ export const BONAMOUSSADI_APARTMENTS = [
     bathrooms: 2,
     surface: 65,
     amenities: [
-      'WiFi gratuit haut débit',
+      'WiFi gratuit haut dï¿½bit',
       'Climatisation multi-split',
-      'Cuisine équipée premium',
-      'TV câble dans chaque chambre',
+      'Cuisine ï¿½quipï¿½e premium',
+      'TV cï¿½ble dans chaque chambre',
       'Lave-linge et lave-vaisselle',
-      'Grand réfrigérateur américain',
+      'Grand rï¿½frigï¿½rateur amï¿½ricain',
       'Four et micro-ondes',
       'Balcon spacieux',
-      'Sécurité 24h/7j',
+      'Sï¿½curitï¿½ 24h/7j',
       'Parking privatif',
-      'Ménage bi-hebdomadaire',
+      'Mï¿½nage bi-hebdomadaire',
       'Linge et serviettes fournis',
       'Service concierge'
     ],
     features: [
       'Appartement de standing',
       'Vue panoramique sur la ville',
-      'Résidence sécurisée',
+      'Rï¿½sidence sï¿½curisï¿½e',
       'Piscine commune',
       'Salle de sport',
       'Jardin paysager'
     ],
     images: [
-      '/images/bonamoussadi/t2-002-1.jpg',
-      '/images/bonamoussadi/t2-002-2.jpg',
-      '/images/bonamoussadi/t2-002-3.jpg',
-      '/images/bonamoussadi/t2-002-4.jpg',
-      '/images/bonamoussadi/t2-002-5.jpg'
+      '/images/salon vip bonamousadi.jpg',
+      '/images/salon 3 bonamousadi.jpg',
+      '/images/cuisiwn 2 bonamousadi.jpg',
+      '/images/salon bonamousadi.jpg',
+      '/images/cuisine bonamousadi.jpg'
     ],
     available: true,
     featured: true,
@@ -295,7 +295,7 @@ export const BONAMOUSSADI_APARTMENTS = [
       reviews: 18
     },
     description: {
-      fr: 'Magnifique appartement T2 de standing dans une résidence moderne de Bonamoussadi. Idéal pour familles ou séjours d\'affaires prolongés.',
+      fr: 'Magnifique appartement T2 de standing dans une rï¿½sidence moderne de Bonamoussadi. Idï¿½al pour familles ou sï¿½jours d\'affaires prolongï¿½s.',
       en: 'Beautiful luxury T2 apartment in a modern residence in Bonamoussadi. Ideal for families or extended business stays.'
     }
   }

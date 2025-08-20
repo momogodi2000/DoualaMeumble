@@ -1,7 +1,7 @@
 {
-  "name": "Appartements Meublés Douala - Bonamoussadi",
-  "short_name": "AppartDouala",
-  "description": "Location d'appartements meublés premium à Bonamoussadi, Douala. Réservation instantanée via WhatsApp. Service conciergerie 24h/7j.",
+  "name": "Fresh Residence - Appartements Meublés Douala",
+  "short_name": "Fresh Residence",
+  "description": "Fresh Residence - Location d'appartements meublés premium à Douala. Réservation instantanée via WhatsApp. Service conciergerie 24h/7j.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

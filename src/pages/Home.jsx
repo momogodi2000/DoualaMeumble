@@ -24,8 +24,11 @@ import { HeroTitle, Heading, Text, Lead, AccentText, Price } from '../components
 import { MotionButton, WhatsAppButton } from '../components/atoms/Button';
 import { PropertyCard, TestimonialCard, MotionCard } from '../components/atoms/Card';
 import { APARTMENTS_DATA, QUARTERS, getFeaturedApartments, getPopularApartments } from '../data/apartments-enhanced';
+import { formatPrice, formatCapacity } from '../utils/formatting';
+import { generateWhatsAppURL, generateInquiryWhatsAppURL } from '../utils/whatsapp';
 import { useWhatsApp } from '../services/whatsapp-enhanced';
 import NewsletterSignup from '../components/notifications/NewsletterSignup';
+import StudioPresentation from '../components/sections/StudioPresentation';
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -35,11 +38,11 @@ const Home = () => {
   const featuredApartments = getFeaturedApartments();
   const popularApartments = getPopularApartments();
   
-  // Premium hero configuration
+  // Premium hero configuration with logo
   const heroImages = [
-    '/images/hero/douala-luxury-1.jpg',
-    '/images/hero/douala-luxury-2.jpg', 
-    '/images/hero/douala-luxury-3.jpg'
+    '/icons/app-logo.svg',
+    '/icons/logo.jpg',
+    '/images/salon bonamousadi.jpg'
   ];
 
   useEffect(() => {
@@ -102,28 +105,22 @@ const Home = () => {
 
   const doualaQuarters = [
     {
-      name: 'Bonapriso',
-      description: 'Quartier des affaires',
-      count: apartments.filter(apt => apt.location.quarter === 'Bonapriso').length,
-      image: '/images/bonapriso.jpg'
+      name: 'Bonamoussadi',
+      description: 'Quartier résidentiel premium',
+      count: 1,
+      image: '/images/salon bonamousadi.jpg'
     },
     {
-      name: 'Bonanjo',
-      description: 'Centre administratif',
-      count: apartments.filter(apt => apt.location.quarter === 'Bonanjo').length,
-      image: '/images/bonanjo.jpg'
+      name: 'Makepe College Orchide',
+      description: 'Quartier étudiant moderne',
+      count: 1,
+      image: '/images/photo-akwa.jpg'
     },
     {
-      name: 'Akwa',
-      description: 'Centre-ville animé',
-      count: apartments.filter(apt => apt.location.quarter === 'Akwa').length,
-      image: '/images/akwa.jpg'
-    },
-    {
-      name: 'Bali',
-      description: 'Quartier résidentiel',
-      count: apartments.filter(apt => apt.location.quarter === 'Bali').length,
-      image: '/images/bali.jpg'
+      name: 'Logbessou',
+      description: 'Quartier en développement',
+      count: 1,
+      image: '/images/admin-sorel2.jpg'
     }
   ];
 
@@ -293,7 +290,7 @@ const Home = () => {
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Pourquoi Choisir AppartDouala ?
+              Pourquoi Choisir Fresh Residence ?
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Nous nous engageons à vous offrir le meilleur service et confort pour votre séjour à Douala.
@@ -330,7 +327,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {doualaQuarters.map((quarter, index) => (
               <Link
                 key={index}
@@ -362,6 +359,9 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Studio Presentation */}
+      <StudioPresentation />
+
       {/* Testimonials */}
       <section className="py-20">
         <div className="container-custom">
@@ -375,7 +375,32 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.slice(0, 3).map((testimonial) => (
+            {[
+              {
+                id: 1,
+                name: 'Marie Dubois',
+                location: 'Paris, France',
+                rating: 5,
+                text: 'Séjour exceptionnel dans le studio de Bonamoussadi ! L\'appartement était impeccable et très bien situé. Le service client est remarquable.',
+                apartment: 'Studio Premium Bonamoussadi'
+              },
+              {
+                id: 2,
+                name: 'James Wilson',
+                location: 'Londres, UK',
+                rating: 5,
+                text: 'Perfect for business travel. The Makepe apartment had everything I needed and the location was ideal for my meetings.',
+                apartment: 'Appartement Makepe College Orchide'
+              },
+              {
+                id: 3,
+                name: 'Sophie Martin',
+                location: 'Yaoundé, Cameroun',
+                rating: 5,
+                text: 'Un service irréprochable ! L\'appartement Logbessou était exactement conforme aux photos. Je recommande vivement.',
+                apartment: 'Nouvel Appartement Logbessou'
+              }
+            ].map((testimonial) => (
               <div key={testimonial.id} className="card">
                 <div className="p-6">
                   <div className="flex items-center mb-4">

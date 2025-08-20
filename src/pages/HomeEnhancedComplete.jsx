@@ -67,11 +67,11 @@ const HomeEnhancedComplete = () => {
   
   const themeColors = getThemeColors();
 
-  // Premium hero configuration
+  // Premium hero configuration with logo
   const heroImages = [
-    '/images/hero/douala-luxury-1.jpg',
-    '/images/hero/douala-luxury-2.jpg', 
-    '/images/hero/douala-luxury-3.jpg'
+    '/icons/logo.jpg',
+    '/icons/app-logo.svg',
+    '/images/salon bonamousadi.jpg'
   ];
 
   useEffect(() => {
@@ -266,13 +266,12 @@ const HomeEnhancedComplete = () => {
               animate={{ scale: index === currentSlide ? 1 : 1.1 }}
               transition={{ duration: 6 }}
             >
-              <div 
-                className="w-full h-full bg-gradient-to-br"
-                style={{
-                  background: `linear-gradient(135deg, ${themeColors.primary}20, ${themeColors.secondary}40)`
-                }}
+              <img
+                src={image}
+                alt={`Hero background ${index + 1}`}
+                className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-black/40"></div>
+              <div className="absolute inset-0 bg-black/50"></div>
             </motion.div>
           ))}
         </div>

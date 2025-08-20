@@ -48,6 +48,24 @@ export const QUARTERS = {
     features: ['Résidentiel premium', 'Écoles internationales', 'Centres médicaux', 'Complexes sportifs'],
     averagePrice: 50000,
     popularity: 90
+  },
+  MAKEPE: {
+    id: 'makepe',
+    name: 'Makepe College Orchide',
+    description: 'Quartier étudiant moderne avec toutes commodités',
+    coordinates: { lat: 4.0756, lng: 9.7234 },
+    features: ['Écoles', 'Universités', 'Transport', 'Commerces'],
+    averagePrice: 35000,
+    popularity: 85
+  },
+  LOGBESSOU: {
+    id: 'logbessou',
+    name: 'Logbessou',
+    description: 'Quartier en développement avec constructions neuves',
+    coordinates: { lat: 4.0623, lng: 9.7456 },
+    features: ['Constructions neuves', 'Infrastructures modernes', 'Calme', 'Accessible'],
+    averagePrice: 40000,
+    popularity: 75
   }
 };
 
@@ -82,49 +100,103 @@ export const AMENITIES = {
 };
 
 export const APARTMENTS_DATA = [
+  // 01 - Studio Premium Bonamoussadi
   {
     id: 'apt_001',
-    title: 'Studio Executive Bonapriso',
+    title: 'Studio Premium Bonamoussadi',
     subtitle: 'Luxe • Moderne • Sécurisé',
     type: APARTMENT_TYPES.STUDIO,
-    quarter: QUARTERS.BONAPRISO,
+    quarter: QUARTERS.BONAMOUSSADI,
     
     // Location Details
-    address: 'Avenue Charles de Gaulle, Bonapriso',
-    coordinates: { lat: 4.0546, lng: 9.7679 },
+    address: 'Bonamoussadi, Douala',
+    coordinates: { lat: 4.0891, lng: 9.7123 },
     
     // Property Details
-    surface: 35,
-    bedrooms: 0,
+    surface: 38,
+    bedrooms: 1,
     bathrooms: 1,
     capacity: 2,
-    floor: 3,
+    floor: 1,
     
     // Pricing (FCFA)
     pricing: {
-      daily: 35000,
-      weekly: 210000, // -10%
-      monthly: 750000, // -25%
+      daily: 28000,
+      weekly: 170000,
+      monthly: 580000,
       extraPersonFee: 5000,
       cleaningFee: 15000,
-      deposit: 100000
+      deposit: 56000
     },
     
     // Availability
     availability: {
       status: 'available',
-      nextAvailable: '2025-08-16',
+      nextAvailable: '2025-08-20',
       minimumStay: 1,
       maximumStay: 90
     },
     
-    // Images
+    // All Bonamoussadi Images from public/images
     images: [
-      '/images/apartments/apt_001/main.jpg',
-      '/images/apartments/apt_001/bedroom.jpg',
-      '/images/apartments/apt_001/kitchen.jpg',
-      '/images/apartments/apt_001/bathroom.jpg',
-      '/images/apartments/apt_001/balcony.jpg'
+      '/images/salon bonamousadi.jpg',
+      '/images/cuisine bonamousadi.jpg', 
+      '/images/chambre bonamousadi.jpg',
+      '/images/salle a marche bonamousadi.jpg',
+      '/images/salon vip bonamousadi.jpg',
+      '/images/salon 3 bonamousadi.jpg',
+      '/images/cuisiwn 2 bonamousadi.jpg',
+      '/images/photo-bonamousadi.jpg',
+      '/images/photo-bonamousadi-2.jpg',
+      '/images/photo-bonamousadi-3.jpg',
+      '/images/photo-bonamousadi-4.jpg',
+      '/images/photo-bonamousadi-5.jpg'
+    ],
+
+    // Photo gallery organized by categories
+    photoGallery: {
+      exterior: [
+        { url: '/images/photo-bonamousadi.jpg', caption: 'Vue extérieure de la résidence' },
+        { url: '/images/photo-bonamousadi-2.jpg', caption: 'Entrée principale sécurisée' },
+        { url: '/images/photo-bonamousadi-3.jpg', caption: 'Parking privé sécurisé' }
+      ],
+      living: [
+        { url: '/images/salon bonamousadi.jpg', caption: 'Salon spacieux avec TV 4K' },
+        { url: '/images/salon vip bonamousadi.jpg', caption: 'Espace VIP élégant' },
+        { url: '/images/salon 3 bonamousadi.jpg', caption: 'Salon avec vue panoramique' }
+      ],
+      bedrooms: [
+        { url: '/images/chambre bonamousadi.jpg', caption: 'Chambre confortable avec dressing' }
+      ],
+      kitchen: [
+        { url: '/images/cuisine bonamousadi.jpg', caption: 'Cuisine moderne entièrement équipée' },
+        { url: '/images/cuisiwn 2 bonamousadi.jpg', caption: 'Électroménager haut de gamme' }
+      ],
+      bathrooms: [
+        { url: '/images/salle a marche bonamousadi.jpg', caption: 'Salle de bain moderne' }
+      ]
+    },
+
+    // Video presentations from public/videos
+    videos: [
+      {
+        id: 'studio_bonamoussadi_presentation',
+        title: 'Présentation Studio Bonamoussadi',
+        description: 'Découvrez notre magnifique studio à Bonamoussadi',
+        thumbnail: '/images/salon bonamousadi.jpg',
+        url: '/videos/Presentation studio bonamousadi.mp4',
+        duration: '2:30',
+        type: 'presentation'
+      },
+      {
+        id: 'general_presentation',
+        title: 'Présentation Générale',
+        description: 'Vue d\'ensemble de nos services',
+        thumbnail: '/images/salon vip bonamousadi.jpg',
+        url: '/videos/presentation.mp4',
+        duration: '1:45',
+        type: 'overview'
+      }
     ],
     
     // Amenities
@@ -142,20 +214,20 @@ export const APARTMENTS_DATA = [
     
     // Reviews
     rating: {
-      average: 4.8,
-      count: 127,
+      average: 4.9,
+      count: 24,
       breakdown: {
-        5: 85,
-        4: 30,
-        3: 8,
-        2: 3,
-        1: 1
+        5: 20,
+        4: 3,
+        3: 1,
+        2: 0,
+        1: 0
       }
     },
     
     // SEO & Marketing
     badges: [
-      { type: 'new', label: 'Nouveau' },
+      { type: 'featured', label: 'Studio Vedette' },
       { type: 'premium', label: 'Premium' }
     ],
     
@@ -164,39 +236,45 @@ export const APARTMENTS_DATA = [
     
     // Business Logic
     instantBooking: true,
-    whatsappMessage: "Bonjour ! Je souhaite réserver le Studio Executive Bonapriso pour les dates suivantes :",
+    whatsappMessage: "Bonjour ! Je souhaite réserver le Studio Premium Bonamoussadi :",
     
     // Additional Info
     description: `
-      Découvrez ce studio moderne au cœur de Bonapriso, parfait pour 
+      Découvrez ce magnifique studio premium au cœur de Bonamoussadi, parfait pour 
       les professionnels et couples. Entièrement meublé avec goût, 
       il offre tout le confort nécessaire pour un séjour d'exception.
+      
+      Quartier sécurisé 24h/7j avec toutes les commodités à proximité.
     `,
     
     highlights: [
-      'Vue panoramique sur la ville',
-      'Quartier sécurisé 24h/7j',
-      'Proche centres d\'affaires',
-      'Parking privé inclus'
+      'Studio entièrement équipé et meublé',
+      'Quartier résidentiel sécurisé 24h/7j',
+      'Proche écoles et centres commerciaux',
+      'Parking privé inclus',
+      'WiFi haut débit gratuit',
+      'Service de ménage inclus'
     ],
     
     rules: [
       'Non-fumeur',
       'Animaux non autorisés',
       'Fêtes interdites',
-      'Check-in: 14h - Check-out: 12h'
+      'Check-in: 14h - Check-out: 12h',
+      'Respect du voisinage requis'
     ]
   },
-  
+
+  // 02 - Appartement Makepe College Orchide  
   {
     id: 'apt_002',
-    title: 'Appartement Business Bonanjo',
-    subtitle: 'Central • Connecté • Professionnel',
+    title: 'Appartement Makepe College Orchide',
+    subtitle: 'Étudiant • Accessible • Moderne',
     type: APARTMENT_TYPES.T2,
-    quarter: QUARTERS.BONANJO,
+    quarter: QUARTERS.MAKEPE,
     
-    address: 'Rue Joss, Centre-ville Bonanjo',
-    coordinates: { lat: 4.0483, lng: 9.7042 },
+    address: 'College Orchide, Makepe, Douala',
+    coordinates: { lat: 4.0756, lng: 9.7234 },
     
     surface: 55,
     bedrooms: 2,
@@ -205,28 +283,40 @@ export const APARTMENTS_DATA = [
     floor: 2,
     
     pricing: {
-      daily: 45000,
-      weekly: 270000,
-      monthly: 900000,
-      extraPersonFee: 7500,
-      cleaningFee: 20000,
-      deposit: 150000
+      daily: 28000,
+      weekly: 168000,
+      monthly: 720000,
+      extraPersonFee: 3000,
+      cleaningFee: 12000,
+      deposit: 56000
     },
     
     availability: {
       status: 'available',
       nextAvailable: '2025-08-20',
-      minimumStay: 2,
-      maximumStay: 180
+      minimumStay: 1,
+      maximumStay: 365
     },
     
     images: [
-      '/images/apartments/apt_002/main.jpg',
-      '/images/apartments/apt_002/living.jpg',
-      '/images/apartments/apt_002/bedroom1.jpg',
-      '/images/apartments/apt_002/bedroom2.jpg',
-      '/images/apartments/apt_002/kitchen.jpg'
+      '/images/photo-akwa.jpg',
+      '/images/photo-akwa-2.jpg',
+      '/images/photo-bonapriso.jpg'
     ],
+
+    photoGallery: {
+      exterior: [
+        { url: '/images/photo-akwa.jpg', caption: 'Vue extérieure du bâtiment' }
+      ],
+      living: [
+        { url: '/images/photo-akwa-2.jpg', caption: 'Salon spacieux avec TV' }
+      ],
+      bedrooms: [
+        { url: '/images/photo-bonapriso.jpg', caption: 'Chambres confortables' }
+      ]
+    },
+
+    videos: [],
     
     amenities: [
       AMENITIES.WIFI,
@@ -234,257 +324,101 @@ export const APARTMENTS_DATA = [
       AMENITIES.KITCHEN,
       AMENITIES.TV,
       AMENITIES.WASHING,
-      AMENITIES.IRON,
-      AMENITIES.CLEANING,
-      AMENITIES.CONCIERGE,
+      AMENITIES.PARKING,
       AMENITIES.SECURITY
     ],
     
     rating: {
       average: 4.6,
-      count: 89,
+      count: 12,
       breakdown: {
-        5: 58,
-        4: 22,
-        3: 7,
-        2: 2,
+        5: 7,
+        4: 4,
+        3: 1,
+        2: 0,
         1: 0
       }
     },
     
     badges: [
-      { type: 'available', label: 'Disponible' },
-      { type: 'business', label: 'Business' }
+      { type: 'student', label: 'Étudiant Friendly' }
     ],
     
     featured: false,
-    popular: true,
-    instantBooking: true,
+    popular: false,
     
-    whatsappMessage: "Bonjour ! Je m'intéresse à l'Appartement Business Bonanjo :",
+    instantBooking: true,
+    whatsappMessage: "Bonjour ! Je souhaite réserver l'Appartement Makepe College Orchide :",
     
     description: `
-      Appartement idéal pour les séjours d'affaires au centre de Douala. 
-      Situé à proximité des administrations et banques, il dispose de 
-      tout l'équipement nécessaire pour allier travail et confort.
+      Appartement parfait pour étudiants et jeunes professionnels près du College Orchide.
+      Proximité des universités et facilités de transport. Idéal pour partage à plusieurs.
     `,
     
     highlights: [
-      'Centre administratif',
-      'Transport facile',
-      'Internet très haut débit',
-      'Espace de travail dédié'
+      'Proche universités et écoles',
+      'Transport accessible',
+      'Parfait pour étudiants',
+      'Prix abordable',
+      'Sécurité assurée'
     ],
     
     rules: [
-      'Parfait pour business',
-      'WiFi professionnel',
-      'Check-in flexible',
-      'Service conciergerie'
+      'Non-fumeur',
+      'Animaux non autorisés',
+      'Respect du voisinage',
+      'Check-in: 15h - Check-out: 11h'
     ]
   },
-  
+
+  // 03 - Nouvel Appartement Logbessou
   {
-    id: 'apt_003',
-    title: 'Villa Familiale Akwa',
-    subtitle: 'Spacieux • Familial • Moderne',
+    id: 'apt_003', 
+    title: 'Nouvel Appartement Logbessou',
+    subtitle: 'Neuf • Moderne • Spacieux',
     type: APARTMENT_TYPES.T3,
-    quarter: QUARTERS.AKWA,
+    quarter: QUARTERS.LOGBESSOU,
     
-    address: 'Boulevard de la Liberté, Akwa',
-    coordinates: { lat: 4.0691, lng: 9.7351 },
+    address: 'Logbessou, Douala',
+    coordinates: { lat: 4.0623, lng: 9.7456 },
     
-    surface: 85,
+    surface: 75,
     bedrooms: 3,
     bathrooms: 2,
     capacity: 6,
     floor: 1,
     
     pricing: {
-      daily: 65000,
-      weekly: 390000,
-      monthly: 1300000,
-      extraPersonFee: 10000,
-      cleaningFee: 25000,
-      deposit: 200000
+      daily: 45000,
+      weekly: 270000,
+      monthly: 1170000,
+      extraPersonFee: 7000,
+      cleaningFee: 20000,
+      deposit: 90000
     },
     
     availability: {
       status: 'available',
-      nextAvailable: '2025-08-18',
-      minimumStay: 3,
-      maximumStay: 365
-    },
-    
-    images: [
-      '/images/apartments/apt_003/main.jpg',
-      '/images/apartments/apt_003/living.jpg',
-      '/images/apartments/apt_003/master-bedroom.jpg',
-      '/images/apartments/apt_003/bedroom2.jpg',
-      '/images/apartments/apt_003/bedroom3.jpg',
-      '/images/apartments/apt_003/kitchen.jpg',
-      '/images/apartments/apt_003/terrace.jpg'
-    ],
-    
-    amenities: [
-      AMENITIES.WIFI,
-      AMENITIES.AC,
-      AMENITIES.KITCHEN,
-      AMENITIES.TV,
-      AMENITIES.WASHING,
-      AMENITIES.IRON,
-      AMENITIES.BALCONY,
-      AMENITIES.VIEW,
-      AMENITIES.PARKING,
-      AMENITIES.CLEANING,
-      AMENITIES.CONCIERGE,
-      AMENITIES.SECURITY
-    ],
-    
-    rating: {
-      average: 4.9,
-      count: 156,
-      breakdown: {
-        5: 132,
-        4: 18,
-        3: 4,
-        2: 2,
-        1: 0
-      }
-    },
-    
-    badges: [
-      { type: 'premium', label: 'Premium' },
-      { type: 'family', label: 'Familial' },
-      { type: 'popular', label: 'Populaire' }
-    ],
-    
-    featured: true,
-    popular: true,
-    instantBooking: true,
-    
-    whatsappMessage: "Bonjour ! Je souhaite réserver la Villa Familiale Akwa :",
-    
-    description: `
-      Magnifique villa familiale dans le quartier dynamique d'Akwa. 
-      Parfaite pour les familles et groupes, elle offre espace, 
-      confort et tous les services premium de Douala Luxury Stays.
-    `,
-    
-    highlights: [
-      'Idéale pour familles',
-      'Grande terrasse privée',
-      'Quartier animé et sûr',
-      'Services premium inclus'
-    ],
-    
-    rules: [
-      'Enfants bienvenus',
-      'Terrasse privée',
-      'Parking pour 2 voitures',
-      'Service ménage quotidien'
-    ]
-  },
-  
-  {
-    id: 'apt_004',
-    title: 'Résidence Executive Bonamoussadi',
-    subtitle: 'Premium • Moderne • Exclusif',
-    type: APARTMENT_TYPES.T3,
-    quarter: QUARTERS.BONAMOUSSADI,
-    
-    address: 'Avenue de l\'Indépendance, Bonamoussadi',
-    coordinates: { lat: 4.0891, lng: 9.7123 },
-    
-    surface: 120,
-    bedrooms: 3,
-    bathrooms: 2,
-    capacity: 6,
-    floor: 2,
-    
-    pricing: {
-      daily: 75000,
-      weekly: 450000,
-      monthly: 1500000,
-      extraPersonFee: 12000,
-      cleaningFee: 30000,
-      deposit: 250000
-    },
-    
-    availability: {
-      status: 'available',
-      nextAvailable: '2025-08-16',
+      nextAvailable: '2025-08-20',
       minimumStay: 2,
       maximumStay: 365
     },
     
-    // Enhanced photo gallery with categories
     images: [
-      '/images/photo-bonamousadi.jpg',
-      '/images/photo-bonamousadi-2.jpg',
-      '/images/photo-bonamousadi-3.jpg',
-      '/images/photo-bonamousadi-4.jpg',
-      '/images/photo-bonamousadi-5.jpg',
-      '/images/photo-akwa.jpg',
-      '/images/photo-akwa-2.jpg',
-      '/images/photo-bonapriso.jpg'
+      '/images/admin-sorel2.jpg',
+      '/images/sorel-admin.jpg'
     ],
 
-    // Photo gallery organized by categories
     photoGallery: {
       exterior: [
-        { url: '/images/photo-bonamousadi.jpg', caption: 'Vue extérieure de la résidence' },
-        { url: '/images/photo-bonamousadi-2.jpg', caption: 'Entrée principale sécurisée' },
-        { url: '/images/photo-bonamousadi-3.jpg', caption: 'Parking privé' }
+        { url: '/images/admin-sorel2.jpg', caption: 'Construction neuve moderne' }
       ],
       living: [
-        { url: '/images/photo-bonamousadi-4.jpg', caption: 'Salon spacieux avec TV 4K' },
-        { url: '/images/photo-bonamousadi-5.jpg', caption: 'Espace repas élégant' },
-        { url: '/images/photo-akwa.jpg', caption: 'Balcon avec vue panoramique' }
-      ],
-      bedrooms: [
-        { url: '/images/photo-bonamousadi.jpg', caption: 'Chambre principale avec dressing' },
-        { url: '/images/photo-bonamousadi-2.jpg', caption: 'Chambre d\'invités' },
-        { url: '/images/photo-bonamousadi-3.jpg', caption: 'Bureau/chambre flexible' }
-      ],
-      kitchen: [
-        { url: '/images/photo-bonamousadi-4.jpg', caption: 'Cuisine moderne entièrement équipée' },
-        { url: '/images/photo-bonamousadi-5.jpg', caption: 'Électroménager haut de gamme' }
-      ],
-      bathrooms: [
-        { url: '/images/photo-akwa.jpg', caption: 'Salle de bain principale avec baignoire' },
-        { url: '/images/photo-akwa-2.jpg', caption: 'Salle d\'eau avec douche italienne' }
+        { url: '/images/sorel-admin.jpg', caption: 'Espace de vie spacieux' }
       ]
-    },    // Video presentations
-    videos: [
-      {
-        id: 'tour_apt_004',
-        title: 'Visite Virtuelle Complète',
-        description: 'Découvrez chaque recoin de cette magnifique résidence',
-        thumbnail: '/images/photo-bonamousadi.jpg',
-        url: '/videos/Presentation studio bonamousadi.mp4',
-        duration: '3:45',
-        type: 'tour'
-      },
-      {
-        id: 'presentation_apt_004',
-        title: 'Présentation de la Résidence',
-        description: 'Vue d\'ensemble des équipements et services',
-        thumbnail: '/images/photo-bonamousadi-2.jpg',
-        url: '/videos/presentation.mp4',
-        duration: '2:30',
-        type: 'presentation'
-      },
-      {
-        id: 'neighborhood_apt_004',
-        title: 'Découverte du Quartier Bonamoussadi',
-        description: 'Explorez les environs et commodités',
-        thumbnail: '/images/photo-bonamousadi-3.jpg',
-        url: '/videos/Presentation studio bonamousadi.mp4',
-        duration: '4:15',
-        type: 'neighborhood'
-      }
-    ],
+    },
+
+    videos: [],
     
     amenities: [
       AMENITIES.WIFI,
@@ -494,86 +428,87 @@ export const APARTMENTS_DATA = [
       AMENITIES.WASHING,
       AMENITIES.IRON,
       AMENITIES.BALCONY,
-      AMENITIES.VIEW,
       AMENITIES.PARKING,
       AMENITIES.CLEANING,
-      AMENITIES.CONCIERGE,
       AMENITIES.SECURITY
     ],
     
     rating: {
-      average: 4.9,
-      count: 89,
+      average: 4.8,
+      count: 8,
       breakdown: {
-        5: 78,
-        4: 8,
-        3: 2,
-        2: 1,
+        5: 6,
+        4: 2,
+        3: 0,
+        2: 0,
         1: 0
       }
     },
     
     badges: [
       { type: 'new', label: 'Nouveau' },
-      { type: 'premium', label: 'Premium' },
-      { type: 'executive', label: 'Executive' }
+      { type: 'spacious', label: 'Spacieux' }
     ],
     
     featured: true,
-    popular: true,
-    instantBooking: true,
+    popular: false,
     
-    whatsappMessage: "Bonjour ! Je souhaite réserver la Résidence Executive Bonamoussadi :",
+    instantBooking: true,
+    whatsappMessage: "Bonjour ! Je souhaite réserver le Nouvel Appartement Logbessou :",
     
     description: `
-      Découvrez l'excellence à Bonamoussadi avec cette résidence executive exceptionnelle. 
-      Située dans le quartier le plus prisé de Douala, elle offre un cadre de vie 
-      prestigieux avec tous les services haut de gamme.
+      Tout nouveau appartement T3 dans le quartier en développement de Logbessou.
+      Construction récente avec toutes les commodités modernes. 
+      Parfait pour familles ou groupes d'amis.
     `,
     
     highlights: [
-      'Quartier résidentiel premium',
-      'Vue panoramique sur la ville',
-      'Proximité écoles internationales',
-      'Sécurité renforcée 24h/7j'
+      'Construction entièrement neuve',
+      'Appartement spacieux T3',
+      'Infrastructures modernes',
+      'Quartier calme et résidentiel',
+      'Idéal pour familles',
+      'Équipements haut de gamme'
     ],
     
     rules: [
-      'Résidence familiale',
+      'Non-fumeur',
       'Animaux sur demande',
-      'Événements privés autorisés',
-      'Service ménage quotidien inclus'
+      'Respect du voisinage requis',
+      'Check-in: 14h - Check-out: 12h',
+      'Maximum 6 personnes'
     ]
   }
 ];
 
 // Business Logic Functions
-export const getApartmentById = (id) => {
-  return APARTMENTS_DATA.find(apt => apt.id === id);
-};
-
-export const getApartmentsByQuarter = (quarterId) => {
-  return APARTMENTS_DATA.filter(apt => apt.quarter.id === quarterId);
-};
-
 export const getFeaturedApartments = () => {
-  return APARTMENTS_DATA.filter(apt => apt.featured);
+  return APARTMENTS_DATA.filter(apartment => apartment.featured);
 };
 
 export const getPopularApartments = () => {
-  return APARTMENTS_DATA.filter(apt => apt.popular);
+  return APARTMENTS_DATA.filter(apartment => apartment.popular);
 };
 
-export const getAvailableApartments = () => {
-  return APARTMENTS_DATA.filter(apt => apt.availability.status === 'available');
+export const getApartmentsByQuarter = (quarterId) => {
+  return APARTMENTS_DATA.filter(apartment => apartment.quarter?.id === quarterId);
+};
+
+export const searchApartments = (searchQuery) => {
+  const query = searchQuery.toLowerCase();
+  return APARTMENTS_DATA.filter(apartment =>
+    apartment.title.toLowerCase().includes(query) ||
+    apartment.description.toLowerCase().includes(query) ||
+    apartment.quarter?.name.toLowerCase().includes(query)
+  );
 };
 
 export const filterApartments = (filters) => {
   return APARTMENTS_DATA.filter(apartment => {
-    // Price filter
+    // Price range filter
     if (filters.priceRange) {
-      const price = apartment.pricing.daily;
-      if (price < filters.priceRange.min || price > filters.priceRange.max) {
+      const { min, max } = filters.priceRange;
+      if (apartment.pricing.daily < min || apartment.pricing.daily > max) {
         return false;
       }
     }
@@ -629,16 +564,13 @@ export const calculatePricing = (apartment, nights, guests = 1) => {
   
   const subtotal = basePrice + extraGuestFees;
   const cleaningFee = apartment.pricing.cleaningFee;
-  const total = subtotal + cleaningFee;
   
   return {
-    basePrice,
-    extraGuestFees,
-    cleaningFee,
     subtotal,
-    total,
+    cleaningFee,
+    total: subtotal + cleaningFee,
     nights,
-    guests,
-    savings: nights >= 7 ? (apartment.pricing.daily * nights - basePrice) : 0
+    pricePerNight: apartment.pricing.daily,
+    extraGuestFees
   };
 };

@@ -62,14 +62,14 @@ const Header = () => {
             to="/" 
             className="flex items-center space-x-2 group"
           >
-            <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <Home className="w-6 h-6 text-white" />
+            <div className="w-10 h-10 flex items-center justify-center">
+              <img src="/icons/app-logo.svg" alt="Fresh Residence Logo" className="w-10 h-10" />
             </div>
             <div className="flex flex-col">
               <span className={`font-display font-bold text-lg leading-none transition-colors ${
                 isScrolled ? 'text-gray-900' : 'text-white'
               }`}>
-                AppartDouala
+                Fresh Residence
               </span>
               <span className={`text-xs transition-colors ${
                 isScrolled ? 'text-gray-600' : 'text-white/80'

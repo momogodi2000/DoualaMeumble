@@ -69,12 +69,12 @@ const ApartmentDetail = () => {
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden mb-8">
               <div className="relative h-96">
                 <img
-                  src={apartment.images[currentImageIndex]}
-                  alt={apartment.title}
+                  src={apartment.images?.[currentImageIndex] || '/images/placeholder.jpg'}
+                  alt={apartment.title || 'Apartment'}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute bottom-4 left-4 flex space-x-2">
-                  {apartment.images.map((_, index) => (
+                  {(apartment.images || []).map((_, index) => (
                     <button
                       key={index}
                       onClick={() => setCurrentImageIndex(index)}
@@ -87,7 +87,7 @@ const ApartmentDetail = () => {
               </div>
               <div className="p-4">
                 <div className="grid grid-cols-4 gap-2">
-                  {apartment.images.slice(0, 4).map((image, index) => (
+                  {(apartment.images || []).slice(0, 4).map((image, index) => (
                     <button
                       key={index}
                       onClick={() => setCurrentImageIndex(index)}
@@ -107,7 +107,7 @@ const ApartmentDetail = () => {
             </div>
 
             {/* Video Section */}
-            {apartment.videos && apartment.videos.length > 0 && (
+            {apartment.videos && Array.isArray(apartment.videos) && apartment.videos.length > 0 && (
               <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden mb-8">
                 <div className="p-4 border-b border-gray-200">
                   <h2 className="text-xl font-semibold text-gray-900 flex items-center">
@@ -167,7 +167,7 @@ const ApartmentDetail = () => {
               <div className="flex items-center space-x-6 mb-6">
                 <div className="flex items-center text-gray-600">
                   <MapPin className="w-5 h-5 mr-2" />
-                  <span>{apartment.location.quarter}, Douala</span>
+                  <span>{apartment.quarter?.name || apartment.address || 'Douala'}, Douala</span>
                 </div>
                 <div className="flex items-center text-secondary-500">
                   <Star className="w-5 h-5 fill-current mr-1" />
@@ -185,7 +185,7 @@ const ApartmentDetail = () => {
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
                   <Bed className="w-6 h-6 text-primary-600 mx-auto mb-2" />
                   <div className="text-sm text-gray-600">Chambres</div>
-                  <div className="font-semibold">{apartment.rooms}</div>
+                  <div className="font-semibold">{apartment.type?.rooms || apartment.bedrooms || 0}</div>
                 </div>
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
                   <Maximize className="w-6 h-6 text-primary-600 mx-auto mb-2" />
@@ -204,7 +204,7 @@ const ApartmentDetail = () => {
                   Description
                 </h2>
                 <p className="text-gray-700 leading-relaxed">
-                  {apartment.description}
+                  {apartment.description || 'Description non disponible.'}
                 </p>
               </div>
 
@@ -213,10 +213,12 @@ const ApartmentDetail = () => {
                   Équipements et Services
                 </h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                  {apartment.amenities.map((amenity, index) => (
+                  {(apartment.amenities || []).map((amenity, index) => (
                     <div key={index} className="flex items-center text-gray-700">
                       <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-                      <span className="text-sm">{amenity}</span>
+                      <span className="text-sm">
+                        {typeof amenity === 'string' ? amenity : amenity?.name || 'Équipement'}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -229,7 +231,7 @@ const ApartmentDetail = () => {
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 sticky top-24">
               <div className="text-center mb-6">
                 <div className="text-3xl font-bold text-gray-900">
-                  {formatPrice(apartment.pricing.daily)}
+                  {formatPrice(apartment.pricing?.daily || 0)}
                 </div>
                 <div className="text-gray-600">par nuit</div>
               </div>
@@ -237,11 +239,11 @@ const ApartmentDetail = () => {
               <div className="space-y-4 mb-6">
                 <div className="flex justify-between">
                   <span className="text-gray-600">Prix semaine :</span>
-                  <span className="font-medium">{formatPrice(apartment.pricing.weekly)}</span>
+                  <span className="font-medium">{formatPrice(apartment.pricing?.weekly || 0)}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Prix mensuel :</span>
-                  <span className="font-medium">{formatPrice(apartment.pricing.monthly)}</span>
+                  <span className="font-medium">{formatPrice(apartment.pricing?.monthly || 0)}</span>
                 </div>
               </div>
 

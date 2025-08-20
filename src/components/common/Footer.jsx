@@ -60,12 +60,12 @@ const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-1">
               <Link to="/" className="flex items-center space-x-2 mb-6">
-                <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                  <Home className="w-6 h-6 text-white" />
+                <div className="w-10 h-10 flex items-center justify-center">
+                  <img src="/icons/app-logo.svg" alt="Fresh Residence Logo" className="w-10 h-10" />
                 </div>
                 <div className="flex flex-col">
                   <span className="font-display font-bold text-lg leading-none">
-                    AppartDouala
+                    Fresh Residence
                   </span>
                   <span className="text-sm text-gray-400">
                     Appartements meublés

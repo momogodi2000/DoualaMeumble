@@ -1,9 +1,9 @@
 {
-  "name": "douala-luxury-stays",
+  "name": "fresh-residence",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Premium apartment rental platform for Douala, Cameroon",
+  "description": "Fresh Residence - Premium apartment rentals in Douala, Cameroon",
   "keywords": ["react", "vite", "apartments", "douala", "luxury", "pwa"],
   "scripts": {
     "dev": "vite",

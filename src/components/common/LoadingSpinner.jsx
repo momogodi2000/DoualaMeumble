@@ -1,15 +1,20 @@
 const LoadingSpinner = ({ size = 'md', text = 'Chargement...' }) => {
   const sizeClasses = {
-    sm: 'w-4 h-4',
-    md: 'w-8 h-8',
-    lg: 'w-12 h-12',
-    xl: 'w-16 h-16'
+    sm: 'w-8 h-8',
+    md: 'w-12 h-12',
+    lg: 'w-16 h-16',
+    xl: 'w-20 h-20'
   };
 
   return (
     <div className="flex flex-col items-center justify-center p-8">
-      <div className={`${sizeClasses[size]} animate-spin`}>
-        <div className="w-full h-full border-4 border-gray-200 border-t-primary-600 rounded-full"></div>
+      <div className="relative">
+        <img 
+          src="/icons/app-logo.svg" 
+          alt="Fresh Residence" 
+          className={`${sizeClasses[size]} animate-pulse`}
+        />
+        <div className={`${sizeClasses[size]} absolute inset-0 animate-spin border-2 border-transparent border-t-blue-600 rounded-full`}></div>
       </div>
       {text && (
         <p className="mt-4 text-gray-600 font-medium">{text}</p>
